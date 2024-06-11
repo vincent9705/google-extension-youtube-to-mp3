@@ -56,7 +56,7 @@ function executeDownload(url) {
                     setTimeout(() => {
                         //to close the tab
                         chrome.runtime.sendMessage({ action: 'downloadComplete' });
-                    }, 1000);
+                    }, 2000);
                 } else {
                     const form = document.querySelector('form');
                     const theDiv = form.querySelector('div');
@@ -64,7 +64,7 @@ function executeDownload(url) {
                     setTimeout(() => {
                         //to close the tab
                         chrome.runtime.sendMessage({ action: 'convertFailed', error: theDiv.textContent });
-                    }, 1000);
+                    }, 2000);
                 }
             });
         }
@@ -137,5 +137,13 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     } else if (request.action === 'getPreviousUrl') {
 
         sendResponse({ previousUrl });
+    }
+});
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+    if (tab.url && tab.url.includes("youtube.com")) {
+        chrome.action.enable(tabId);
+    } else {
+        chrome.action.disable(tabId);
     }
 });

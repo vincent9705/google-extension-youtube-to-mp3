@@ -20,5 +20,11 @@
     "16": "icons/default/icon16.png",
     "48": "icons/default/icon48.png",
     "128": "icons/default/icon128.png"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["popup.js"]
+    }
+  ]
 }
