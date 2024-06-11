@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html data-bs-theme="dark">
+
+<head>
+    <title>Youtube to mp3 in one click</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="min-width: 300px; min-height: 150px;">
+    <div class="d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <button id="openPage" class="btn btn-primary mb-3">Download MP3 Now!</button>
+        <div id="loading" class="d-none d-flex flex-column align-items-center">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <span class="d-block mt-2">Downloading...</span>
+        </div>
+        <h2 id="errorMsg" class="text-danger text-wrap" style="font-size: small; text-align: center;"></h2>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>

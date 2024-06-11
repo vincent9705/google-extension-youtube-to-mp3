@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Video To Mp3 By One Click",
+  "version": "1.1",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://ytmp3s.nu/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/default/icon16.png",
+    "48": "icons/default/icon48.png",
+    "128": "icons/default/icon128.png"
+  }
+}
